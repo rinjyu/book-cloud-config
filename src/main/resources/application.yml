@@ -1,0 +1,31 @@
+server:
+  port: 9000
+
+spring:
+  profiles:
+    active: native
+  banner:
+    location: classpath:banner/banner.txt
+
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+            - file:///${location.git.storage}
+            - file:///${location.git.storage}/service
+
+location:
+  git:
+    storage: D:/workspace/book/book.config
+
+---
+spring:
+  profiles: local
+
+---
+spring:
+  profiles: dev

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: book-cloud-config
+  profiles:
+    active: native
+
+application:
+  project-name: book.cloud.config
+
+logging:
+  path:
+    root: D:/workspace/book/logs
+
+---
+spring:
+  profiles: native
+
+logging:
+  path:
+    root: D:/workspace/book/logs
+
+---
+spring:
+  profiles: local
+
+logging:
+  path:
+    root: D:/workspace/book/logs
+
+---
+spring:
+  profiles: dev
